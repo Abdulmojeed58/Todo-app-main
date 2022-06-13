@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./design.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+<body class="dark">
+
+  <!-- <a href="./design.html" style="display: block; margin-inline:auto; width:max-content;">Design</a> -->
+  <div class="container f-small flex">
+    <header class="flex">
+      <h1>TODO</h1>
+      <div class="dark-light">
+        <img src="./images/icon-sun.svg" alt="">
+      </div>
+    </header>
+
+    <form>
+      <input type="text" placeholder="Currently typing" autofocus id="input">
+
+    </form>
+    
+    <div>
+      
+    </div>
+    <ul class="items color">
+      <li class="flex">
+        <input type="checkbox" id="checkbox">
+        <p>jog around the park</p>
+      </li>
+      <li class="flex">
+        <input type="checkbox" id="checkbox">
+        <p>jog around the park</p>
+      </li>
+      <li class="flex">
+        <input type="checkbox" id="checkbox">
+        <p>jog around the park</p>
+      </li>
+      <li class="flex">
+        <input type="checkbox" id="checkbox">
+        <p>go to school</p>
+      </li>
+      <!-- <li class="flex">
+        <input type="checkbox" id="checkbox">
+        <p>go to school</p>
+      </li>
+      <li class="flex">
+        <input type="checkbox" id="checkbox">
+        <p>go to school</p>
+      </li>
+      <li class="flex">
+        <input type="checkbox" id="checkbox">
+        <p>go to school</p>
+      </li> -->
+    </ul>
+
+
+    <div class="color grid bottom">
+      <!-- Add dynamic number --> 
+      <div class="time-left">5 Items left</div>
+      <div class="flex filter" id="filter">
+        <p class="all">All</p>
+        <p class="active">Active</p>
+        <p class="completed">Completed</p>
+      </div>
+      <div class="clear" id="clear">Clear Completed</div>
+    </div>
+
+  </div>
+  
+  <footer class="color footer">Drag and drop to reorder list</footer>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="./script.js"></script>
+</body>
+</html>
