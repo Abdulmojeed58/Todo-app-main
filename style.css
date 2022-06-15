@@ -190,6 +190,10 @@ li:hover .del{
         margin-bottom: 10px;
     }
 
+    form input {
+        font-size: 1rem;
+    }
+
     ul {
         flex-basis: 45vh;
         box-shadow: none;
