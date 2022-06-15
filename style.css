@@ -2,10 +2,12 @@
 
 body {
     background-repeat: no-repeat;
+    background-size: 100% 35%;
     display: grid;
     place-items: center;
     font-family: "Josefin Sans", sans-serif;
     height: 100vh;
+    
 }
 
 .container {
@@ -29,16 +31,43 @@ header h1 {
     font-weight: 600;
 }
 
-form input {
+form {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
+    height: 60px;
     outline: none;
     border: none;
     background-color: var(--text-bg);
     color: var(--text-color);
     margin: 1rem auto;
     --b-radius: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--b-radius);
 }
+
+form input {
+    width: 100%;
+    height: 100%;
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+form > .box {
+    height: 20px;
+    aspect-ratio: 1;
+    border: 1px solid var(--Dark-Grayish-Blue);
+    border-radius: 50%;
+    /* position: absolute;
+    left: 0;
+    transform: translateX(85%); */
+}
+
 
 ul {
     border-bottom:1px solid var(--text-color);
@@ -59,11 +88,43 @@ li {
     align-items: center;
     --gap: 1rem;
     cursor: pointer;
+    position: relative;
 }
 
 li > p::first-letter {
     text-transform: capitalize;
 }
+
+
+/* CUSTOM CHECKBOX */
+
+#checkbox{
+    opacity: 0;
+    z-index: 1;
+}
+
+.checkmark {
+    height: 20px;
+    aspect-ratio: 1;
+    border: 1px solid var(--Dark-Grayish-Blue);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transform: translateX(85%);
+
+}
+
+.container input:checked~.checkmark {
+    background: url(./images/icon-check.svg), linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+}
+
+.container input:hover~.checkmark {
+    border-color: var(--text-hover);
+}
+
 
 .bottom {
     justify-content: space-between;
@@ -180,3 +241,44 @@ li:hover .del{
 
     
 }
+
+/* 
+<style>body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(0 0 0 / .1);
+    width: 50vw;
+    height: 50vh;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+input {
+    margin-right: 5px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.checkmark {
+    height: 20px;
+    aspect-ratio: 1;
+    border: 1px solid green;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+
+}
+
+.container input:checked~.checkmark {
+    background-color: red;
+}
+
+</style><body><div class="container"><form><label for="checkbox"></label><input type="checkbox"><div class="checkmark"></div><p>Boy</p></form></div></body> */

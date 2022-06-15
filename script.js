@@ -42,9 +42,10 @@ function addItemsToUI() {
     // console.log(todos)
     return ul.innerHTML = todos.reverse().map(todo=>{
         return `
-        <li class="flex ${todo.checked && 'checked'}" id="${todo.id}">
+        <li class="flex ${todo.checked && 'checked'}" id="${todo.id}" draggable="true">
         <input type="checkbox" id="checkbox" ${todo.checked && 'checked'} onchange="changeStatus(event, ${todo.id})">
         <p>${todo.todoName}</p>
+        <div class="checkmark"></div>
         <div class="del active">
           <img src="./images/icon-cross.svg" class="remove">
         </div>
@@ -108,9 +109,10 @@ filter.addEventListener('click', (e)=>{
     else return
     ul.innerHTML = todos.reverse().map(todo=>{
             return `
-            <li class="flex ${todo.checked && 'checked'}" id="${todo.id}">
+            <li class="flex ${todo.checked && 'checked'}" id="${todo.id}" draggable="true">
             <input type="checkbox" id="checkbox" ${todo.checked && 'checked'} onchange="changeStatus(event, ${todo.id})">
             <p>${todo.todoName}</p>
+            <div class="checkmark"></div>
             <div class="del active">
           <img src="./images/icon-cross.svg" class="remove">
         </div>
@@ -174,6 +176,7 @@ ul.addEventListener('click', (e)=>{
                 todos.splice(index, 1)
                 localStorage.setItem('todo', JSON.stringify(todos))
                 addItemsToUI()
+                getitemsLeft()
             }
         })
         
